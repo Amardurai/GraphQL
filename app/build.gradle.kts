@@ -9,7 +9,7 @@ plugins {
 
 apollo {
     service("service") {
-        packageName.set("com.example.graphql")
+        packageName.set("com.graphql")
     }
 }
 
