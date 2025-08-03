@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CountryViewModel @Inject constructor(private val countryClient: CountryClient):ViewModel() {
-    val _uiState = MutableStateFlow(CountryState())
+    private val _uiState = MutableStateFlow(CountryState())
     val uiState = _uiState.asStateFlow()
 
     init {

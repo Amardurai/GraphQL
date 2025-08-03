@@ -9,12 +9,17 @@ import com.graphql.CountryQuery
 
 class ApolloCountryClient(private val apolloClient: ApolloClient) : CountryClient {
     override suspend fun getCountries(): List<SimpleCountry> {
-        return apolloClient.query(CountriesQuery())
-            .execute()
-            .data
-            ?.countries
-            ?.map { it.toDetailedCountry() }
-            .orEmpty()
+        return try {
+            apolloClient.query(CountriesQuery())
+                .execute()
+                .data
+                ?.countries
+                ?.map { it.toDetailedCountry() }
+                .orEmpty()
+        } catch (e: Exception) {
+            println("Amar" + e.message)
+            emptyList()
+        }
     }
 
     override suspend fun getDetailedCountry(code: String): DetailedCountry? {

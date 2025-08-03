@@ -1,6 +1,7 @@
 package com.example.graphql.di
 
 import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.network.http.DefaultHttpEngine
 import com.example.graphql.data.ApolloCountryClient
 import com.example.graphql.domain.CountryClient
 import dagger.Module
@@ -15,9 +16,10 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideApolloClient():ApolloClient {
+    fun provideApolloClient(): ApolloClient {
         return ApolloClient.Builder()
             .serverUrl("https://countries.trevorblades.com/graphql")
+            .httpEngine(DefaultHttpEngine()) // if you're using Apollo 4+
             .build()
     }
 

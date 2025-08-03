@@ -63,13 +63,17 @@ dependencies {
     implementation(libs.apollo.runtime)
 
     // dagger
-    implementation(libs.dagger.hilt)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     implementation(libs.hilt.compose.navigation)
 
 
     // navigation
     implementation(libs.navigation.compose)
-    ksp(libs.hilt.compiler)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.compose)
+    implementation(libs.lifecycle.livedata)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

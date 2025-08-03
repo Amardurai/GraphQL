@@ -1,5 +1,6 @@
 [versions]
 agp = "8.11.1"
+hiltAndroid = "2.56.2"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -9,7 +10,7 @@ lifecycleRuntimeKtx = "2.9.2"
 activityCompose = "1.8.0"
 composeBom = "2024.09.00"
 apollo = "4.0.0"
-hilt = "2.50"
+hilt = "2.56.2"
 ksp = "2.0.21-1.0.27"
 
 [libraries]
@@ -32,8 +33,8 @@ apollo-runtime = { module = "com.apollographql.apollo:apollo-runtime", version.r
 
 
 #dagger hilt
-dagger-hilt = { module = "com.google.dagger:hilt-android", version = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler" , version.ref = "hilt"}
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler" , version.ref = "hilt"}
 hilt-compose-navigation = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 
 #navigation
